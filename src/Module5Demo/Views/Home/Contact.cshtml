@@ -1,0 +1,22 @@
+﻿@model ContactModel
+@inject IViewLocalizer localizer
+
+@localizer["CompanyAddress"]
+@localizer["CompanyEmails"]
+<br />
+
+<form asp-controller="Home" asp-action="Contact" method="post">
+    <div class="form-group">
+        <label class="control-label" for="Name">Name</label>
+        <input asp-for="Name" class="form-control" name="Name" type="text" placeholder="Name" />
+        <span asp-validation-for="Name"></span>
+    </div>
+    <div class="form-group">
+        <label class="control-label" for="Comment">Comment</label>
+        <textarea asp-for="Comment" class="form-control" name="Comment" placeholder="Comment"></textarea>
+        <span asp-validation-for="Comment"></span>
+    </div>
+    <div class="form-group">
+        <input type="submit" class="btn btn-primary col-xs-12" value="Submit" />
+    </div>
+</form>
